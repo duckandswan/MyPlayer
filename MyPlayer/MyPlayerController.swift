@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class MyPlayerController: UIViewController,UITabBarDelegate,UITableViewDataSource {
+class MyPlayerController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var playerView: UIView!
     var player:AVPlayer!
     @IBOutlet weak var subtitleTableView: UITableView!
@@ -84,6 +84,24 @@ class MyPlayerController: UIViewController,UITabBarDelegate,UITableViewDataSourc
         cell.l.text = strs[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let regex = try! NSRegularExpression(pattern: "^(\\d\\d:.*?)\\s" , options: [.dotMatchesLineSeparators])
+        let text = strs[indexPath.row]
+        let nsString = text as NSString
+        let results = regex.matches(in: text, range: NSRange(location: 0, length: nsString.length))
+        var resultString1 = ""
+        var resultString2 = ""
+        
+        resultString2 += "\n"
+        resultString2 += "func setValueForDic(dic:NSDictionary) {\n"
+        for r in results {
+            let s1 = nsString.substring(with: r.rangeAt(1)).replacingOccurrences(of: "\"", with: "")
+            let s2 = nsString.substring(with: r.rangeAt(2))
+        }
+
+    }
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
