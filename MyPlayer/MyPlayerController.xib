@@ -1,12 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyPlayerController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyPlayerController" customModule="MyPlayer" customModuleProvider="target">
             <connections>
+                <outlet property="playerView" destination="izJ-dX-8RI" id="Nar-Ro-ddy"/>
+                <outlet property="subtitleTableView" destination="aZq-A2-b96" id="DXJ-wO-dWx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +21,40 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="izJ-dX-8RI" userLabel="PlayerView">
+                    <rect key="frame" x="0.0" y="20" width="375" height="233.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="CUu-Cn-jHa" appends="YES" id="U3O-tr-Hkr"/>
+                    </connections>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aZq-A2-b96">
+                    <rect key="frame" x="0.0" y="253.5" width="375" height="413.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="YMs-YS-uSa"/>
+                        <outlet property="delegate" destination="-1" id="LwG-Ha-pbc"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="izJ-dX-8RI" secondAttribute="trailing" id="0jC-sd-hRt"/>
+                <constraint firstItem="izJ-dX-8RI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="1KB-EP-sGS"/>
+                <constraint firstItem="aZq-A2-b96" firstAttribute="top" secondItem="izJ-dX-8RI" secondAttribute="bottom" id="7am-ii-pCL"/>
+                <constraint firstItem="aZq-A2-b96" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Kr5-7s-rn8"/>
+                <constraint firstAttribute="bottom" secondItem="aZq-A2-b96" secondAttribute="bottom" id="VdE-sB-mbO"/>
+                <constraint firstItem="izJ-dX-8RI" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.35" id="fuT-hs-h4z"/>
+                <constraint firstItem="izJ-dX-8RI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kT1-bG-gWC"/>
+                <constraint firstAttribute="trailing" secondItem="aZq-A2-b96" secondAttribute="trailing" id="nN2-QV-o33"/>
+            </constraints>
         </view>
+        <tapGestureRecognizer id="CUu-Cn-jHa">
+            <connections>
+                <action selector="tapPLayerView:" destination="-1" id="PKp-XO-5Nb"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>
