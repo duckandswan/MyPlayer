@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E80C85A51E2B1D430028E6F8 /* sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E80C85A41E2B1D430028E6F8 /* sample.mp4 */; };
+		E80C85A81E2B226E0028E6F8 /* MyPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80C85A61E2B226E0028E6F8 /* MyPlayerController.swift */; };
+		E80C85A91E2B226E0028E6F8 /* MyPlayerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E80C85A71E2B226E0028E6F8 /* MyPlayerController.xib */; };
 		E8962A841E04E94D00A31ED8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8962A831E04E94D00A31ED8 /* AppDelegate.swift */; };
 		E8962A861E04E94D00A31ED8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8962A851E04E94D00A31ED8 /* ViewController.swift */; };
 		E8962A891E04E94D00A31ED8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8962A871E04E94D00A31ED8 /* Main.storyboard */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E80C85A41E2B1D430028E6F8 /* sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.mp4; sourceTree = "<group>"; };
+		E80C85A61E2B226E0028E6F8 /* MyPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlayerController.swift; sourceTree = "<group>"; };
+		E80C85A71E2B226E0028E6F8 /* MyPlayerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPlayerController.xib; sourceTree = "<group>"; };
 		E8962A801E04E94D00A31ED8 /* MyPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8962A831E04E94D00A31ED8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8962A851E04E94D00A31ED8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E80C85A31E2B1D430028E6F8 /* videos */ = {
+			isa = PBXGroup;
+			children = (
+				E80C85A41E2B1D430028E6F8 /* sample.mp4 */,
+			);
+			path = videos;
+			sourceTree = "<group>";
+		};
 		E8962A771E04E94D00A31ED8 = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +111,15 @@
 		E8962A821E04E94D00A31ED8 /* MyPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				E80C85A31E2B1D430028E6F8 /* videos */,
 				E8962A831E04E94D00A31ED8 /* AppDelegate.swift */,
 				E8962A851E04E94D00A31ED8 /* ViewController.swift */,
 				E8962A871E04E94D00A31ED8 /* Main.storyboard */,
 				E8962A8A1E04E94D00A31ED8 /* Assets.xcassets */,
 				E8962A8C1E04E94D00A31ED8 /* LaunchScreen.storyboard */,
 				E8962A8F1E04E94D00A31ED8 /* Info.plist */,
+				E80C85A61E2B226E0028E6F8 /* MyPlayerController.swift */,
+				E80C85A71E2B226E0028E6F8 /* MyPlayerController.xib */,
 			);
 			path = MyPlayer;
 			sourceTree = "<group>";
@@ -235,6 +252,8 @@
 				E8962A8E1E04E94D00A31ED8 /* LaunchScreen.storyboard in Resources */,
 				E8962A8B1E04E94D00A31ED8 /* Assets.xcassets in Resources */,
 				E8962A891E04E94D00A31ED8 /* Main.storyboard in Resources */,
+				E80C85A91E2B226E0028E6F8 /* MyPlayerController.xib in Resources */,
+				E80C85A51E2B1D430028E6F8 /* sample.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8962A861E04E94D00A31ED8 /* ViewController.swift in Sources */,
+				E80C85A81E2B226E0028E6F8 /* MyPlayerController.swift in Sources */,
 				E8962A841E04E94D00A31ED8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +525,7 @@
 				E8962AAA1E04E94D00A31ED8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E8962AAB1E04E94D00A31ED8 /* Build configuration list for PBXNativeTarget "MyPlayerTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +534,7 @@
 				E8962AAD1E04E94D00A31ED8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E8962AAE1E04E94D00A31ED8 /* Build configuration list for PBXNativeTarget "MyPlayerUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +543,7 @@
 				E8962AB01E04E94D00A31ED8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
