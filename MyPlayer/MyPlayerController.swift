@@ -52,7 +52,7 @@ class MyPlayerController: UIViewController,UITabBarDelegate,UITableViewDataSourc
     }
     var strs:[String] = []
     func parseString(str:String){
-        let regex = try! NSRegularExpression(pattern: "^\\s+" , options: [.anchorsMatchLines])
+        let regex = try! NSRegularExpression(pattern: "\\R^\\s+" , options: [.anchorsMatchLines])
         let stop = "SomeStringThatYouDoNotExpectToOccurInSelf"
         let range = NSRange(0..<str.utf16.count)
         let modifiedString = regex.stringByReplacingMatches(in: str, options: [], range: range, withTemplate: stop)
