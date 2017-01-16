@@ -57,7 +57,7 @@ class MyPlayerController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let range = NSRange(0..<str.utf16.count)
         let modifiedString = regex.stringByReplacingMatches(in: str, options: [], range: range, withTemplate: stop)
         strs = modifiedString.components(separatedBy: stop)
-        print(modifiedString)
+//        print(modifiedString)
 //        print(strs)
 //        for s in strs{
 //            print(s)
@@ -86,20 +86,14 @@ class MyPlayerController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let regex = try! NSRegularExpression(pattern: "^(\\d\\d:.*?)\\s" , options: [.dotMatchesLineSeparators])
+        let regex = try! NSRegularExpression(pattern: "^(\\d\\d:.*?)\\s" , options: [.anchorsMatchLines])
         let text = strs[indexPath.row]
         let nsString = text as NSString
         let results = regex.matches(in: text, range: NSRange(location: 0, length: nsString.length))
-        var resultString1 = ""
-        var resultString2 = ""
-        
-        resultString2 += "\n"
-        resultString2 += "func setValueForDic(dic:NSDictionary) {\n"
         for r in results {
-            let s1 = nsString.substring(with: r.rangeAt(1)).replacingOccurrences(of: "\"", with: "")
-            let s2 = nsString.substring(with: r.rangeAt(2))
+            let s1 = nsString.substring(with: r.rangeAt(1))
+            print(s1)
         }
-
     }
     
     
