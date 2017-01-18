@@ -19,7 +19,7 @@ class MyPlayerController: UIViewController,UITableViewDelegate,UITableViewDataSo
         super.viewDidLoad()
         view.frame.size.height = UIScreen.main.bounds.height
         view.frame.size.width = UIScreen.main.bounds.width
-        view.backgroundColor = UIColor.green
+//        view.backgroundColor = UIColor.green
         
         subtitleTableView.register(UINib(nibName: "SubtitleCell", bundle: nil), forCellReuseIdentifier: "subtitle")
         subtitleTableView.rowHeight = UITableViewAutomaticDimension
@@ -90,16 +90,27 @@ class MyPlayerController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let text = strs[indexPath.row]
         let nsString = text as NSString
         let results = regex.matches(in: text, range: NSRange(location: 0, length: nsString.length))
-        for r in results {
-            let s1 = nsString.substring(with: r.rangeAt(1))
-            print(s1)
-        }
+//        for r in results {
+//            let s1 = nsString.substring(with: r.rangeAt(1))
+//            print(s1)
+//        }
+        let r = results.first!
+        let s1 = nsString.substring(with: r.rangeAt(1))
+        print(s1)
+        let s2 = s1.replacingOccurrences(of: ",", with: ".")
+        let d = s2.components(separatedBy: ":").reduce(0) { (r, s) -> Double in
+            return (r * 60 + Double(s)!)
+        } + 18.5
+        print(d)
+        let t = CMTime(seconds: d, preferredTimescale: 1)
+        print(t)
+        player.seek(to: t)
     }
     
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        addPlayer()
+        addPlayer()
         addSubtitle()
     }
 
