@@ -56,13 +56,16 @@ class MyPlayerController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let stop = "SomeStringThatYouDoNotExpectToOccurInSelf"
         let range = NSRange(0..<str.utf16.count)
         let modifiedString = regex.stringByReplacingMatches(in: str, options: [], range: range, withTemplate: stop)
-        strs = modifiedString.components(separatedBy: stop)
+        strs = modifiedString.components(separatedBy: stop).map({ (str) -> String in
+            return str.replaceWithRegex(regexString: "\\R", replaceString: " ")
+        })
 //        print(modifiedString)
 //        print(strs)
 //        for s in strs{
 //            print(s)
 //            print("SomeStringThatYouDoNotExpectToOccurInSelf")
 //        }
+        
 
     }
     
@@ -81,12 +84,12 @@ class MyPlayerController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "subtitle", for: indexPath) as! SubtitleCell
-        cell.l.text = strs[indexPath.row]
+        cell.l.text = strs[indexPath.row].replaceWithRegex(regexString: "\\d{2}:.*,\\d{3}\\s", replaceString: "")
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let regex = try! NSRegularExpression(pattern: "^(\\d\\d:.*?)\\s" , options: [.anchorsMatchLines])
+        let regex = try! NSRegularExpression(pattern: "(\\d\\d:.*?)\\s" , options: [.anchorsMatchLines])
         let text = strs[indexPath.row]
         let nsString = text as NSString
         let results = regex.matches(in: text, range: NSRange(location: 0, length: nsString.length))
