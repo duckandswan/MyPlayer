@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E41514231E348E6200F7D600 /* CopyableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41514221E348E6200F7D600 /* CopyableLabel.swift */; };
 		E80C85A51E2B1D430028E6F8 /* sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E80C85A41E2B1D430028E6F8 /* sample.mp4 */; };
 		E80C85A81E2B226E0028E6F8 /* MyPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80C85A61E2B226E0028E6F8 /* MyPlayerController.swift */; };
 		E80C85A91E2B226E0028E6F8 /* MyPlayerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E80C85A71E2B226E0028E6F8 /* MyPlayerController.xib */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E41514221E348E6200F7D600 /* CopyableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CopyableLabel.swift; sourceTree = "<group>"; };
 		E80C85A41E2B1D430028E6F8 /* sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.mp4; sourceTree = "<group>"; };
 		E80C85A61E2B226E0028E6F8 /* MyPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlayerController.swift; sourceTree = "<group>"; };
 		E80C85A71E2B226E0028E6F8 /* MyPlayerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPlayerController.xib; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				E8962A8C1E04E94D00A31ED8 /* LaunchScreen.storyboard */,
 				E8962A8F1E04E94D00A31ED8 /* Info.plist */,
 				E84CB0491E30E0CE00FA52C2 /* Extension.swift */,
+				E41514221E348E6200F7D600 /* CopyableLabel.swift */,
 			);
 			path = MyPlayer;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				E80C85AC1E2B78670028E6F8 /* SubtitleCell.swift in Sources */,
 				E80C85A81E2B226E0028E6F8 /* MyPlayerController.swift in Sources */,
 				E8962A841E04E94D00A31ED8 /* AppDelegate.swift in Sources */,
+				E41514231E348E6200F7D600 /* CopyableLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
